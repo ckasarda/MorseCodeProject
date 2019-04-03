@@ -77,4 +77,4 @@
 
 2. Source Code -> code from programming section including additional characters
 
-3. IO Files -> input and outputfiles fro test run revealing results for all program options
+3. IO Files -> input and outputfiles for test run revealing results for all program options
