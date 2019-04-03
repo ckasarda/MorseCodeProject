@@ -4,15 +4,15 @@
 
 *ADT* -> encodes and decodes English letters to and from string codes of two symbols, like "." and "-" from Morse code.
 
-*Required Elements* 
+*Required Elements*  
 -> data items  
                   -> operations
 
-*Optional Elements* 
+*Optional Elements*  
 -> examples  
                   -> illustrations
 
-*Intended Audience* 
+*Intended Audience*  
 -> client or in-house project director
 
 **Implementation:**
@@ -27,22 +27,22 @@
 
 **Decoding:**
 
-*Decoding Mechanism*
+*Decoding Mechanism*  
 -> Binary Tree  
                    -> includes 26 letters, 9 digits, and 7 punctuation marks  
                    -> example: letter "v" translates to "...-", meaning left-left-left-right in binary tree
                    
 **Programming:**
 
-*Full Code* 
+*Full Code*  
 -> MorseTable.txt  
           -> used by programm to perform encode and decode of messages
 
-*English2Morse* 
+*English2Morse*  
 -> build code table: shows equivalent dot-dash string for each letter  
               -> encode English text file: letter "v" generates "...-"
 
-*Morse2English* 
+*Morse2English*  
 -> build decode tree: contains insert operations into binary tree
 
                      1. read in letter from code table  
@@ -57,14 +57,14 @@
                      3. end at space, indicating end of Morse code string for single letter  
                      4. English letter to be written is letter value at current node  
 
-*Additional Characters* 
+*Additional Characters*  
 -> add six or seven new characters, symbols, foreign language characters, or emojis  
                       -> assign these to unused dot-dash Morse code strings  
                       -> incorporate into test files and run  
                       
 **Enhancement:**
 
-*Enchancement*
+*Enchancement*  
 -> at least once enhancement to appendix to the ADT  
              -> provide description  
              -> no implementation required  
