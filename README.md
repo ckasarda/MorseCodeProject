@@ -1,6 +1,6 @@
 # MorseCodeProject
 
-##**Preparation:**
+## **Preparation:**
 
 *ADT* -> encodes and decodes English letters to and from string codes of two symbols, like "." and "-" from Morse code.
 
@@ -15,7 +15,7 @@
 *Intended Audience*  
 -> client or in-house project director
 
-##**Implementation:**
+## **Implementation:**
 
 *Language* -> Python or C++
 
@@ -25,14 +25,14 @@
 
 *Output* -> translated message appearing on fil with similar name
 
-##**Decoding:**
+## **Decoding:**
 
 *Decoding Mechanism*  
 -> Binary Tree  
                    -> includes 26 letters, 9 digits, and 7 punctuation marks  
                    -> example: letter "v" translates to "...-", meaning left-left-left-right in binary tree
                    
-##**Programming:**
+## **Programming:**
 
 *Full Code*  
 -> MorseTable.txt  
@@ -62,7 +62,7 @@
                       -> assign these to unused dot-dash Morse code strings  
                       -> incorporate into test files and run  
                       
-##**Enhancement:**
+## **Enhancement:**
 
 *Enchancement*  
 -> at least once enhancement to appendix to the ADT  
@@ -71,7 +71,7 @@
              -> suggestions on Project2Morse.pdf on WyoCourses  
              
 
-##**Deliverables:**
+## **Deliverables:**
 
 1. ADT Document -> cover page (title, names, date, optional features: team name or logo, and others specified)
 
