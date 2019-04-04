@@ -36,7 +36,7 @@
 
 *Full Code*  
 -> MorseTable.txt  
-          -> used by programm to perform encode and decode of messages
+          -> used by program to perform encode and decode of messages
 
 *English2Morse*  
 -> build code table: shows equivalent dot-dash string for each letter  
