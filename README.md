@@ -1,5 +1,9 @@
 # MorseCodeProject
 
+## **Meetings: **
+
+*Time:* 9:00 AM at eng computer lab 4072
+
 ## **Preparation:**
 
 *ADT* -> encodes and decodes English letters to and from string codes of two symbols, like "." and "-" from Morse code.
