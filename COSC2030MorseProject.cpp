@@ -27,7 +27,10 @@ int main()
 	//Root of decode tree with no value
 	Node * DecodeTree = new Node;
 
+	//Constructs the decode binary tree
 	decodeTreeConstructor("MorseTable.txt", DecodeTree);
+	
+	//Attempts to find the letter associated with "...-", which is the letter v, and returns the letter v
 	findLetter("...-", DecodeTree);
 
 }
