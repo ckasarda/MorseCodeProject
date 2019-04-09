@@ -69,12 +69,12 @@ void decodeTreeConstructor(string filename, Node * Parent) {
 //Adds letter to the correct node in the decode tree
 void addLetter(char letter_c, string morse, Node * root) {
 
-		if (morse.size() == 0) {
-
+		if (morse.size() == 0) {//End of recursion, stores letter from node into variable that stores letter
+			
 			root->letter = letter_c;
 
 		}
-		else if (morse[0] == '.') {
+		else if (morse[0] == '.') {//When a dot, add a new left node if no existing node, then recursively call function until end of morse string found
 
 			if (root->leftNode == NULL) {
 
@@ -85,7 +85,7 @@ void addLetter(char letter_c, string morse, Node * root) {
 			addLetter(letter_c, morse.substr(1), root->leftNode);
 
 		}
-		else if (morse[0] == '-') {
+		else if (morse[0] == '-') {//When a dash, add a new right node if no existing node, then recursively call function until end of morse string found
 
 			if (root->rightNode == NULL) {
 
@@ -105,18 +105,18 @@ void findLetter(string morse, Node * root) {
 	char letter_c;
 	string morse_code = morse;
 	
-	if (morse.size() == 0) {
+	if (morse.size() == 0) {//Letter has been found, prints out statement with desired letter if working properly
 
 		letter_c = root->letter;
 		cout << "The letter represented is: " << letter_c << endl;
 
 	}
-	else if (morse[0] == '.') {
+	else if (morse[0] == '.') {//If a dot, recursively call function for node's left child until size of morse string equals 0
 
 		findLetter(morse_code.substr(1), root->leftNode);
 
 	}
-	else if (morse[0] == '-') {
+	else if (morse[0] == '-') {//If a dot, recursively call function for node's right child until size of morse string equals 0
 
 		findLetter(morse_code.substr(1), root->rightNode);
 
