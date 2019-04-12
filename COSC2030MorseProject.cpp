@@ -1,5 +1,5 @@
 //Project 2: Morse Code Binary Tree Example
-
+//Connor Kasarda
 
 #include "pch.h"
 #include <iostream>
@@ -9,18 +9,16 @@
 
 using namespace std;
 
-const string whitespace = "\t\f\v\n\r";
-
-struct Node {
+struct Node {//Creates the nodes that will build up the decode binary tree
 	char letter = ' ';
 	struct Node * leftNode = NULL;
 	struct Node * rightNode = NULL;
 };
 
-void decodeTreeConstructor(string, Node *);
-void addLetter(char, string, Node *);
-void findLetter(string, Node *);
-void E2M(string, string);
+void decodeTreeConstructor(string, Node *);//Constructs the decode information for morse code into a binary tree
+void addLetter(char, string, Node *);//Used to add desired letter into the binary decode tree
+void findLetter(string, Node *);//Finds the equivalent letter for the morse code string passed in
+void E2M(string, string);//Converts an English word file into morse code
 
 int main()
 {
