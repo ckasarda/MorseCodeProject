@@ -21,7 +21,7 @@
 
 ## **Implementation:**
 
-*Language* -> C++
+*Language* -> C++ and Python
 
 *Objective* -> translate Morse to and from English letters
 
