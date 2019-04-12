@@ -31,7 +31,12 @@ int main()
 	decodeTreeConstructor("MorseTable.txt", DecodeTree);
 
 	//English to Morse example
-	E2M("MorseTable.txt", "E2MTest1.txt");
+	E2M("MorseTable.txt", "E2MTest2.txt");
+
+	cout << endl << endl;
+
+	//Morse to English example
+	M2E(DecodeTree, "M2ETest2.txt");
 
 }
 
@@ -118,7 +123,7 @@ void findLetter(string morse, Node * root) {
 	if (morse.size() == 0) {//Found end of the morse code string,
 							//displays letter found at current node
 		letter_c = root->letter;
-		cout << "The symbol represented is: " << letter_c << endl;
+		cout << letter_c;
 
 	}
 	else if (morse[0] == '.') {//If a dot encountered, 
@@ -238,8 +243,44 @@ void E2M(string morsetable, string morsefile) {
 
 }
 
-void M2E(Node * root, string englishfile) {
+void M2E(Node * root, string engfile) {
 
-	//Under construction
+	string morse = "";
+
+	ifstream eng_message;
+	eng_message.open(engfile);
+
+	//Finds length of morse message
+	eng_message.seekg(0, eng_message.end);
+	streamoff eng_length = eng_message.tellg();
+	eng_message.seekg(0, eng_message.beg);
+
+	//Creates a buffer for morse message text
+	char * eng_buffer = new char[int(eng_length)];
+
+	//Read morse message text as block
+	eng_message.read(eng_buffer, eng_length);
+
+	for (int i = 0; i < eng_length; i++) {
+
+		if (eng_buffer[i] == '.')
+			morse += ".";
+		else if (eng_buffer[i] == '-')
+			morse += "-";
+		else if (eng_buffer[i] == ' ' && eng_buffer[i + 1] == ' ' && eng_buffer[i + 2] == ' ') {
+
+			findLetter(morse, root);
+			cout << " ";
+			morse = "";
+
+		}
+		else if (eng_buffer[i] == ' ') {
+
+			findLetter(morse, root);
+			morse = "";
+
+		}
+
+	}
 
 }
