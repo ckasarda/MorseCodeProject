@@ -33,6 +33,7 @@ int main()
 	//English to Morse example
 	E2M("MorseTable.txt", "E2MTest2.txt");
 
+	//Separates E2M example from M2E example
 	cout << endl << endl;
 
 	//Morse to English example
@@ -133,7 +134,7 @@ void findLetter(string morse, Node * root) {
 									 //the symbol does not exist so display a message
 									 //saying it is not found
 
-			cout << "Letter not found" << endl;
+			cout << "(Error: Letter not found!)" << endl;
 
 		}
 		else {
@@ -150,7 +151,7 @@ void findLetter(string morse, Node * root) {
 									  //the symbol does not exist so display a message
 									  //saying it is not found
 
-			cout << "Letter not found" << endl;
+			cout << "(Error: Letter not found!)" << endl;
 
 		}
 		else {
@@ -245,8 +246,10 @@ void E2M(string morsetable, string morsefile) {
 
 void M2E(Node * root, string engfile) {
 
+	//Declares and initializes string variable to hold morse code
 	string morse = "";
 
+	//Opens file with English words
 	ifstream eng_message;
 	eng_message.open(engfile);
 
@@ -261,20 +264,22 @@ void M2E(Node * root, string engfile) {
 	//Read morse message text as block
 	eng_message.read(eng_buffer, eng_length);
 
-	for (int i = 0; i < eng_length; i++) {
+	for (int i = 0; i < eng_length; i++) {//Siphens through the entire buffer of the English word file
 
-		if (eng_buffer[i] == '.')
+		if (eng_buffer[i] == '.')//Adds a dot to the morse code string to be decoded to English
 			morse += ".";
-		else if (eng_buffer[i] == '-')
+		else if (eng_buffer[i] == '-')//Adds a dash to the morse code string to be decoded to English
 			morse += "-";
-		else if (eng_buffer[i] == ' ' && eng_buffer[i + 1] == ' ' && eng_buffer[i + 2] == ' ') {
+		else if (eng_buffer[i] == ' ' && eng_buffer[i + 1] == ' ' && eng_buffer[i + 2] == ' ') {//If three spaces, indicates a space and beginning of new word
+																								//and finds the letter from morse code string then prints a space
+																								//before reseting the morse code string
 
 			findLetter(morse, root);
 			cout << " ";
 			morse = "";
 
 		}
-		else if (eng_buffer[i] == ' ') {
+		else if (eng_buffer[i] == ' ') {//If just one space, find the letter from the morse code string then reset the morse string
 
 			findLetter(morse, root);
 			morse = "";
