@@ -31,13 +31,13 @@ int main()
 	decodeTreeConstructor("MorseTable.txt", DecodeTree);
 
 	//English to Morse example
-	E2M("MorseTable.txt", "E2MTest2.txt");
+	E2M("MorseTable.txt", "E2MTest3.txt");
 
 	//Separates E2M example from M2E example
 	cout << endl << endl;
 
 	//Morse to English example
-	M2E(DecodeTree, "M2ETest2.txt");
+	M2E(DecodeTree, "M2ETest3.txt");
 
 }
 
@@ -285,7 +285,10 @@ void M2E(Node * root, string engfile) {
 			morse = "";
 
 		}
-
 	}
+
+	findLetter(morse, root);
+	morse = "";
+
 
 }
