@@ -1,8 +1,5 @@
 //Project 2: Morse Code Binary Tree Example
-//Connor Kasarda
 
-//The english to morse code works completely
-//The morse to english is in the works
 
 #include "pch.h"
 #include <iostream>
@@ -34,14 +31,7 @@ int main()
 	//Constructs the morse code keys into the decode binary tree
 	decodeTreeConstructor("MorseTable.txt", DecodeTree);
 
-	//Attempts to find a letter from morse code string input and
-	//displays correct letter
-	string morseInput = " ";
-	cout << "Type morse code equivalent of a letter: ";
-	getline(cin, morseInput);
-
-	findLetter(morseInput, DecodeTree);
-
+	//English to Morse example
 	E2M("MorseTable.txt", "E2MTest1.txt");
 
 }
@@ -206,17 +196,20 @@ void E2M(string morsetable, string morsefile) {
 
 		for (int j = 0; j < table_length; j++) {
 
-			if (tolower(message_buffer[i]) == table_buffer[j]) {
+			if (tolower(message_buffer[i]) == table_buffer[j]) {//Checks to see if same letter is found in morse table file
 
+				//initializes variable z with 2, the starting point of the morse code equivalent of the letter in the morse table file
 				int z = 2;
 
-				while (table_buffer[j + z] == '.' || table_buffer[j + z] == '-') {
+				while (table_buffer[j + z] == '.' || table_buffer[j + z] == '-') {//Tanslates letter to morse equivalent
 
+					//Adds dot or dash to morse string variable according to morse table file
 					if (table_buffer[j + z] == '.')
 						morse_string += ".";
 					else if (table_buffer[j + z] == '-')
 						morse_string += "-";
 
+					//Increments variable z
 					z++;
 
 				}
@@ -226,7 +219,7 @@ void E2M(string morsetable, string morsefile) {
 				break;
 
 			}
-			else if (tolower(message_buffer[i]) == ' ') {
+			else if (tolower(message_buffer[i]) == ' ') {//If there is a space, 3 spaces are printed
 
 				cout << "   ";
 				morse_string = "";
@@ -234,7 +227,7 @@ void E2M(string morsetable, string morsefile) {
 
 			}
 
-			morse_string = "";
+			morse_string = "";//Resets the morse string variable
 
 		}
 
