@@ -270,8 +270,8 @@ void M2E(Node * root, string engfile) {
 			morse += ".";
 		else if (eng_buffer[i] == '-')//Adds a dash to the morse code string to be decoded to English
 			morse += "-";
-		else if (eng_buffer[i] == ' ' && eng_buffer[i + 1] == ' ' && eng_buffer[i + 2] == ' ') {//If three spaces, indicates a space and beginning of new word
-																								//and finds the letter from morse code string then prints a space
+		else if (eng_buffer[i] == ' ' && eng_buffer[i + 1] == ' ' && eng_buffer[i + 2] == ' ') {//If three spaces, indicates a space and beginning of new word.
+																								//Finds the letter from morse code string then prints a space
 																								//before reseting the morse code string
 
 			findLetter(morse, root);
@@ -290,5 +290,6 @@ void M2E(Node * root, string engfile) {
 	findLetter(morse, root);
 	morse = "";
 
+	eng_message.close();
 
 }
