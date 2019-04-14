@@ -18,8 +18,8 @@ struct Node {//Creates the nodes that will build up the decode binary tree
 void decodeTreeConstructor(string, Node *);//Constructs the decode information for morse code into a binary tree
 void addLetter(char, string, Node *);//Used to add desired letter into the binary decode tree
 void findLetter(string, Node *);//Finds the equivalent letter for the morse code string passed in
-void E2M(string, string);//Converts an English word file into Forse code
-void M2E(Node *, string);//Converts a Morse code file into an English words
+void E2M(string, string);//Converts an English word file into Morse code
+void M2E(Node *, string);//Converts a Morse code file into English words
 
 int main()
 {
