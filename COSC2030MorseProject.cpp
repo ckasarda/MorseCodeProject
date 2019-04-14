@@ -1,5 +1,4 @@
 //Project 2: Morse Code Binary Tree Example
-//Connor Kasarda
 
 #include "pch.h"
 #include <iostream>
