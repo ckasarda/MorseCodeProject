@@ -1,5 +1,9 @@
 //Project 2: Morse Code Binary Tree Example
-//Connor Kasarda
+//C++: Connor Kasarda
+//Python: Tiago Araujo
+//Coder Reviewer: Bailie Allemand 
+//Coder Reviewer: Jeffrey Michaelis
+//Coder Reviewer: Matt Sharp
 
 #include "pch.h"
 #include <iostream>
