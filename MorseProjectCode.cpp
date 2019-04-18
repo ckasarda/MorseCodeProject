@@ -7,9 +7,8 @@
 
 #include "pch.h"
 #include <iostream>
-#include <string>
-#include <fstream>
-#include <stddef.h>
+#include <string> //Allows increased functionality with strings
+#include <fstream> //Allows for input and output with text files
 
 using namespace std;
 
