@@ -59,6 +59,7 @@ void decodeTreeConstructor(string filename, Node * Parent) {
 	//Insert file data into decode tree
 	if (morsedata.is_open()) {
 
+		//Invariant: letter always has first letter of line, or letter to be represented, and morse has rest of same line from position 2, the morse string equivalent
 		while (getline(morsedata, line)) {
 
 			//Store letter to be inserted into decode binary tree
@@ -201,8 +202,10 @@ void E2M(string morsetable, string morsefile) {
 	morse_table.read(table_buffer,table_length);
 
 	//Prints english message as morse equivalent
+	//Invariant: i is always less than character length of text in message file
 	for (int i = 0; i < message_length; i++) {
-
+		
+		//Invariant: j is always less than character length of text in morse table file
 		for (int j = 0; j < table_length; j++) {
 
 			if (tolower(message_buffer[i]) == table_buffer[j]) {//Checks to see if same letter is found in morse table file
@@ -210,6 +213,7 @@ void E2M(string morsetable, string morsefile) {
 				//initializes variable z with 2, the starting point of the morse code equivalent of the letter in the morse table file
 				int z = 2;
 
+				//Invariant: morse_string is either part of or the entirety of the morse string equivalent of the letter so far
 				while (table_buffer[j + z] == '.' || table_buffer[j + z] == '-') {//Tanslates letter to morse equivalent
 
 					//Adds dot or dash to morse string variable according to morse table file
@@ -268,6 +272,7 @@ void M2E(Node * root, string engfile) {
 	//Read morse message text as block
 	eng_message.read(eng_buffer, eng_length);
 
+	//Invariant: i is always less than character length of english text file
 	for (int i = 0; i < eng_length; i++) {//Siphens through the entire buffer of the English word file
 
 		if (eng_buffer[i] == '.')//Adds a dot to the morse code string to be decoded to English
