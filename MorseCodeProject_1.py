@@ -2,7 +2,7 @@
 
 ## Project 2: Morse Code
 
-    # Tiago Araujo, Bailey Allemand, Connor Kasarda, Jeffrey Michaelis, Matt Sharp.
+    # Tiago Araujo, Bailie Allemand, Connor Kasarda, Jeffrey Michaelis, Matt Sharp.
 
 ## In the morse code, the letters are separated by one space and the words are separated by 2 spaces
 ## This code allows capital and small letters
@@ -146,7 +146,9 @@ def English2Morse ():
     # creates the file which is going to have the message in morse code
     morse_hidden_file = open(filename[:-4]+'_hidden.txt','w')
     # for each line in the file, take each word. For each word, transform the letters into morse code
+    # Invariant: line is always less than or equal to the number of lines in the english to morse file
     for line in E2M_file:
+        # If the lines begins with a space, then write the spaces in the file being created and remove them from the line being read
         while line[0] == ' ':
             morse_hidden_file.write(' ')
             line = line[1:]
@@ -160,7 +162,9 @@ def English2Morse ():
                 break
             else:
                 # for each letter in each word, print the correspondent morse code in the new file
+                # Invariant: word is always less than or equal to number of words in words_list
                 for word in words_list:
+                    # Invariant: letter is always less than or equal to the number of letters in word
                     for letter in word:
                         # if the letter is uppercase, add a '*' symbol in front of the letter and transform the lowercase of that letter into morse code
                         try:
@@ -223,6 +227,7 @@ def Morse2English():
     unhide_letter_file = open(filename[:-4]+'_unhidden.txt','w')
     # for each line of the file, take each morse code "path", for each morse code "path", go to the binary tree and
         # find which letter that morse code path represents
+    # Invariant: line is always less than or equal to the number of lines in hidden_morse_file
     for line in hidden_morse_file:
         while line[0] == ' ':
             unhide_letter_file.write(' ')
@@ -234,6 +239,7 @@ def Morse2English():
             if morse_letter[0][0] == var1 or morse_letter[0][0] == var2 or morse_letter[0][0] == '*':
                 # for each dot/dash in the file, go to the binary tree and find what the correspondent
                     # letter is and write it in the new file
+                # Invariant: hidden_letter_path is always less than or equal to the number of dashes and dots in morse_letter
                 for hidden_letter_path in morse_letter:
                     try:
                         if hidden_letter_path != '':
@@ -246,7 +252,7 @@ def Morse2English():
                         else:
                             count += 1
                             if count%2 == 0:
-                                # that's the end of a word, print two spaces
+                                # that's the end of a word, print one spaces
                                 unhide_letter_file.write(' ')
                             else:
                                 pass
@@ -306,8 +312,10 @@ def newMorseTable():
     # another Morse Table file is created using the new symbols
     Morse_Table = open('MorseTable.txt','r')
     new_Morse_Table = open('new_MorseTable.txt','w')
+    # Invariant: line is always less than or equal to the number of lines in the Morse_Table file
     for line in Morse_Table:
         new_Morse_Table.write(line[:2])
+        # Invariant: i is always a dash or a dot
         for i in line[2:-1]:
             if i == '.':
                 new_Morse_Table.write(var1)
