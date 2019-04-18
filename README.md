@@ -1,4 +1,5 @@
 Pseudo code is complete. Will leave it up for a few hours on here before I turn it it in case anyone would like to review or change it at all.
+    
     Bailie: They look good to me, I am starting to work on the Design layout so I will post it on here for review asa I get it     together. 
 
 # MorseCodeProject
