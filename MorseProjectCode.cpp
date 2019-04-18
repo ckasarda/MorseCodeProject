@@ -272,7 +272,7 @@ void M2E(Node * root, string engfile) {
 	//Read morse message text as block
 	eng_message.read(eng_buffer, eng_length);
 
-	//Invariant: i is always less than character length of english text file
+	//Invariant: morse is always either part of or the entirety of the morse code string equivalent to be decoded to english
 	for (int i = 0; i < eng_length; i++) {//Siphens through the entire buffer of the English word file
 
 		if (eng_buffer[i] == '.')//Adds a dot to the morse code string to be decoded to English
