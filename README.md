@@ -1,3 +1,5 @@
+Pseudo code is complete. Will leave it up for a few hours on here before I turn it it in case anyone would like to review or change it at all.
+
 # MorseCodeProject
 
 ## **Meetings: **
