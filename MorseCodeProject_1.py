@@ -252,7 +252,7 @@ def Morse2English():
                         else:
                             count += 1
                             if count%2 == 0:
-                                # that's the end of a word, print one spaces
+                                # that's the end of a word, print one space
                                 unhide_letter_file.write(' ')
                             else:
                                 pass
