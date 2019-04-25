@@ -1,3 +1,5 @@
+The proposal is accessible.  MorseCodeProject_proposal, it is currently a .docx file when we have completed it we can export it as a .pdf for when we submit it. See you all on Tuesday at 8:30 am. :) 
+
 Pseudo code is complete. Will leave it up for a few hours on here before I turn it it in case anyone would like to review or change it at all.
     
    Bailie: They look good to me, I am starting to work on the Design layout so I will post it on here for review asap. 
