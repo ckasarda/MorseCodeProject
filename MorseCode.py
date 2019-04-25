@@ -5,10 +5,10 @@
     # Tiago Araujo, Bailie Allemand, Connor Kasarda, Jeffrey Michaelis, Matt Sharp.
 
 ## In the morse code, the letters are separated by one space and the words are separated by 2 spaces
-## This code allows capital and small letters
+## This code allows capital and lowercase letters
     # If the letter is capitalized, during the encode, one '*' is added before the morse code;
     # during the decode, the program verifies if the symbol before the morse code is a '*',
-        # if it is the case, it prints the letter capitalized
+        # if this is the case, it prints the letter capitalized
 
 # To run this program,
     # You will need to download the MorseTable.txt file on Wyocourses
@@ -16,10 +16,10 @@
     # You will need one txt file in morse code, to have it translated into english letters
 
 ## The program works even when symbols in the english file do not exist in the "MorseTable.txt" file
-    # if that happens, this unkown symbol will be ignored
+    # if that happens, this unknown symbol will be ignored
 
-## The program works even when there are morse codes in the morse code file that does not exists in the "MorseTable.txt" file
-    # if that happens, this unkown morse code will be ignored
+## The program works even when there are morse codes in the morse code file that do not exist in the "MorseTable.txt" file
+    # if that happens, this unknown morse code will be ignored
 
 ## You can choose the symbols of the morse code by selecting 'change' at the main menu
     ## if you do not change it, the program will work with '.' and '-' by default
@@ -27,7 +27,7 @@
         # different from '*' because it is the symbol that allows capitalized letters
 
 
-## This first part is to allow to change the color of the output text
+## This first part is to allow the user to change the color of the output text
 
 import sys
 try:
@@ -63,8 +63,8 @@ class Node:
     ## create a binary tree with letters in its nodes
         # if '.' -> go to the left
         # if '-' -> go to the right
-        # at the end of the path, if the node already exists and it is an empty string (' '), turn the value of the node that letter 
-         #if, at the end of the path, the node do note exists, create a new node with value that letter
+        # at the end of the path, if the node already exists and it is an empty string (' '), make the value of the node that letter 
+         #if, at the end of the path, the node does not exist, create a new node with a value of that letter
 
 
     ## given a path (morse code) and a letter, insert the letter into the binary tree in its right position 
@@ -137,10 +137,10 @@ def English2Morse ():
     why = ''
     excp2 = True
     excp3 = True
-    ## This part is building the Table, which is an dictionary,
+    ## This part is building the Table, which is a dictionary,
         # that shows for each letter (the key), the equivalent dot-dash string (the value)
     # if newM is True, that means that the user has changed the symbols of the morse code, so, we are going to use the new table
-        # if it is False, that means the uer did not change the symbols, so we can use the table wiht dash and dots
+        # if it is False, that means the user did not change the symbols, so we can use the table with dashes and dots
     if newM:
         Morse_Table = open('new_MorseTable.txt','r')
     else:
@@ -154,7 +154,7 @@ def English2Morse ():
             Morse_dict.update({line[0]:line[2:-1]})
         Morse_Table.close()
         ## take the name of the file which has english letters to translate the text into morse code
-            #try until the user enter a file that exists
+            #try until the user enters a file that exists
         while True:
             try:
                 filename = input("Please, write the name of the file (with extension) which has letters: \n")
@@ -167,7 +167,7 @@ def English2Morse ():
         # for each line in the file, take each word. For each word, transform the letters into morse code
         # Invariant: line is always less than or equal to the number of lines in the english to morse file
         for line in E2M_file:
-            # If the lines begins with a space, then write the spaces in the file being created and remove them from the line being read
+            # If the line begins with a space, then write the spaces in the file being created and remove them from the line being read
             while line[0] == ' ':
                 morse_hidden_file.write(' ')
                 line = line[1:]
@@ -244,7 +244,7 @@ def Morse2English():
             root.insert(line[2:-1],line[0])
         Morse_Table.close()
         ## take the name of the file (with morse code) to translate the code into english letters
-            #try until the user enter a file that exists
+            #try until the user enters a file that exists
         while True:
             try:
                 filename = input('Please, write the name of the file (with extension) which has the morse code: \n')
@@ -327,7 +327,7 @@ def newMorseTable():
         excp3 = False
     if excp3:
         var1 = '*'
-        # The symbol cannot be '*' because that is the symbol that allow the computer recognizes capital letters
+        # The symbol cannot be '*' because that is the symbol that allow the computer to recognize capital letters
         # The symbol must be just one character
         while var1 == '*' or len(var1)>1:
             var1 = input("\nPlease enter the first symbol in the morse code: ")
