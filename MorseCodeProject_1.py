@@ -18,8 +18,8 @@
 ## The program works even when symbols in the english file do not exist in the "MorseTable.txt" file
     # if that happens, this unkown symbol will be ignored
 
-## The program works even when there are morse codes in the morse code file that does not exists in the "MorseTable.txt" file
-    # if that happens, this unkown morse code will be ignored
+## The program works even when there are morse codes in the morse code file that do not exist in the "MorseTable.txt" file
+    # if that happens, this unknown morse code will be ignored
 
 ## You can choose the symbols of the morse code by selecting 'change' at the main menu
     ## if you do not change it, the program will work with '.' and '-' by default
@@ -126,7 +126,7 @@ def English2Morse ():
     ## This part is building the Table, which is an dictionary,
         # that shows for each letter (the key), the equivalent dot-dash string (the value)
     # if newM is True, that means that the user has changed the symbols of the morse code, so, we are going to use the new table
-        # if it is False, that means the uer did not change the symbols, so we can use the table wiht dash and dots
+        # if it is False, that means the user did not change the symbols, so we can use the table with dash and dots
     if newM:
         Morse_Table = open('new_MorseTable.txt','r')
     else:
@@ -135,7 +135,7 @@ def English2Morse ():
         Morse_dict.update({line[0]:line[2:-1]})
     Morse_Table.close()
     ## take the name of the file which has english letters to translate the text into morse code
-        #try until the user enter a file that exists
+        #try until the user enters a file that exists
     while True:
         try:
             filename = input("Please, write the name of the file (with extension) which has letters: \n")
@@ -215,7 +215,7 @@ def Morse2English():
         root.insert(line[2:-1],line[0])
     Morse_Table.close()
     ## take the name of the file (with morse code) to translate the code into english letters
-        #try until the user enter a file that exists
+        #try until the user enters a file that exists
     while True:
         try:
             filename = input('Please, write the name of the file (with extension) which has the morse code: \n')
